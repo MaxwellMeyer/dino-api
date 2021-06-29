@@ -7,9 +7,10 @@ import DinoService from "../src/service.js";
 async function getDinos(input1, input2) {
   let response = await DinoService.dinoIpsum(input1, input2);
 
-  if (response.result === "success") {
+  if (response) {
     $(".result").text(response.body);
-    console.log("getDinos works..?");
+  } else {
+    console.log("getDinos not works..?");
   }
 }
 
